@@ -25,7 +25,18 @@ bin/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
+### SpringBoot ###
 application.properties
+application.yml
+application-prod.properties
+application-prod.yml
+application-dev.properties
+application-dev.yml
+
+### Docker ###
+Dockerfile
+.env
 
 ### NetBeans ###
 /nbproject/private/
