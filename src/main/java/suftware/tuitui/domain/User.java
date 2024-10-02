@@ -36,7 +36,6 @@ public class User {
     @Column(name = "account_state")
     private AccountState accountState;
 
-
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;

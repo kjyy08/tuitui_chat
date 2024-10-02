@@ -30,7 +30,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers(
                                 new AntPathRequestMatcher("/error"),
-                                new AntPathRequestMatcher("/chat/**")).permitAll()
+                                new AntPathRequestMatcher("/ws-stomp/**")).permitAll()
                         .anyRequest().authenticated())
 
                 .addFilterBefore(new JwtFilter(jwtUtil, userRepository), LogoutFilter.class)
