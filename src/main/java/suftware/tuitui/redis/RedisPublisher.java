@@ -1,4 +1,4 @@
-package suftware.tuitui.service;
+package suftware.tuitui.redis;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,13 +11,11 @@ import suftware.tuitui.dto.request.MessageRequestDto;
 @Service
 @Slf4j
 public class RedisPublisher {
+    //  단일 토픽 사용을 위해 bean 주입
     private final ChannelTopic channelTopic;
     private final RedisTemplate<String, Object> redisTemplate;
 
     public void publish(MessageRequestDto messageRequestDto){
-        // 로그 추가: 발행할 메시지와 채널명
-        log.info("Publishing message to Redis: {}", messageRequestDto);
-        log.info("Channel: {}", channelTopic.getTopic());
         redisTemplate.convertAndSend(channelTopic.getTopic(), messageRequestDto);
     }
 }

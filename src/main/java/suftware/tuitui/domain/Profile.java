@@ -3,7 +3,7 @@ package suftware.tuitui.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
-import suftware.tuitui.common.enumType.Gender;
+import suftware.tuitui.common.enumtype.Gender;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -48,4 +48,11 @@ public class Profile {
 
     @OneToOne(mappedBy = "profile", cascade = CascadeType.ALL, orphanRemoval = true)
     private ProfileImage profileImage;
+
+    @OneToOne(mappedBy = "hostProfile", cascade = CascadeType.ALL, orphanRemoval = true)
+    private ChatRoom hostChatRoom;
+
+    @OneToOne(mappedBy = "guestProfile", cascade = CascadeType.ALL, orphanRemoval = true)
+    private ChatRoom guestChatRoom;
+
 }

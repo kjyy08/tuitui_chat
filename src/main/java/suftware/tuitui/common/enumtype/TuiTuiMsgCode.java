@@ -1,4 +1,4 @@
-package suftware.tuitui.common.enumType;
+package suftware.tuitui.common.enumtype;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -37,6 +37,8 @@ public enum TuiTuiMsgCode {
     COMMENT_LIKE_DELETE_SUCCESS(HttpStatus.OK, "COMMENT-004", "좋아요 삭제 성공"),
     COMMENT_LIKE_READ_SUCCESS(HttpStatus.OK, "COMMENT-005", "좋아요 조회 성공"),
 
+    CHAT_ROOM_READ_SUCCESS(HttpStatus.OK, "CHATROOM-001", "채팅방 조회 성공"),
+
     // 201 Created responses
     USER_SIGNUP_SUCCESS(HttpStatus.CREATED, "USER-006", "회원가입 성공"),
 
@@ -52,6 +54,8 @@ public enum TuiTuiMsgCode {
     FOLLOWS_CREATE_SUCCESS(HttpStatus.CREATED, "FOLLOW-003", "팔로우 생성 성공"),
 
     IMAGES_CREATE_SUCCESS(HttpStatus.CREATED, "IMAGE-002", "이미지 업로드 성공"),
+
+    CHAT_ROOM_CREATE_SUCCESS(HttpStatus.CREATED, "CHATROOM-002", "채팅방 생성 성공"),
 
     // 400 Bad Request responses
     USER_SIGNUP_FAIL(HttpStatus.BAD_REQUEST, "USER-007", "회원가입 실패"),
@@ -108,6 +112,8 @@ public enum TuiTuiMsgCode {
     FILE_NOT_FOUND(HttpStatus.NOT_FOUND, "FILE-001", "파일을 찾을 수 없음"),
 
     IMAGE_NOT_FOUND(HttpStatus.NOT_FOUND, "IMAGE-005", "이미지를 찾을 수 없음"),
+
+    CHAT_ROOM_NOT_FOUND(HttpStatus.NOT_FOUND, "CHATROOM-003", "채팅방을 찾을 수 없음"),
 
     //  500
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "SERVER-001", "서버에서 요청에 대한 처리를 할 수 없음");

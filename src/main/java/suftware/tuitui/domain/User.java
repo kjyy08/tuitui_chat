@@ -3,8 +3,8 @@ package suftware.tuitui.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
-import suftware.tuitui.common.enumType.AccountState;
-import suftware.tuitui.common.enumType.Role;
+import suftware.tuitui.common.enumtype.AccountState;
+import suftware.tuitui.common.enumtype.Role;
 
 import java.sql.Timestamp;
 

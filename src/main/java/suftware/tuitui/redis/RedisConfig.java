@@ -1,4 +1,4 @@
-package suftware.tuitui.config;
+package suftware.tuitui.redis;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -9,12 +9,14 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import suftware.tuitui.dto.request.MessageRequestDto;
-import suftware.tuitui.service.RedisSubscriber;
 
 @Configuration
+@EnableRedisRepositories(
+        basePackages = "suftware.tuitui.repository.redis"
+)
 public class RedisConfig {
     @Value("${spring.redis.host}")
     private String host;
@@ -33,6 +35,7 @@ public class RedisConfig {
         redisTemplate.setConnectionFactory(connectionFactory);
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(String.class));
+
         return redisTemplate;
     }
 
@@ -43,7 +46,7 @@ public class RedisConfig {
                                                               ChannelTopic channelTopic) {
         RedisMessageListenerContainer container = new RedisMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        container.addMessageListener(listenerAdapter, topic());
+        container.addMessageListener(listenerAdapter, channelTopic);
         return container;
     }
 

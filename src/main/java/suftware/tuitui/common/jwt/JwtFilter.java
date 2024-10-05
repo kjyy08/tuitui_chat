@@ -12,12 +12,12 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
-import suftware.tuitui.common.enumType.Role;
-import suftware.tuitui.common.enumType.TuiTuiMsgCode;
+import suftware.tuitui.common.enumtype.Role;
+import suftware.tuitui.common.enumtype.TuiTuiMsgCode;
 import suftware.tuitui.common.http.HttpResponseDto;
 import suftware.tuitui.domain.User;
 import suftware.tuitui.dto.response.CustomUserDetails;
-import suftware.tuitui.repository.UserRepository;
+import suftware.tuitui.repository.jpa.UserRepository;
 
 import java.io.IOException;
 import java.util.Arrays;

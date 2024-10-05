@@ -13,10 +13,10 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import suftware.tuitui.common.jwt.JwtAuthFilter;
 import suftware.tuitui.common.jwt.JwtFilter;
 import suftware.tuitui.common.jwt.JwtUtil;
-import suftware.tuitui.repository.UserRepository;
+import suftware.tuitui.repository.jpa.UserRepository;
 
 @Configuration
-@EnableWebSecurity(debug = true)
+@EnableWebSecurity(debug = false)
 @RequiredArgsConstructor
 public class SecurityConfig {
     private final JwtUtil jwtUtil;

@@ -7,7 +7,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import suftware.tuitui.common.enumType.TuiTuiMsgCode;
+import suftware.tuitui.common.enumtype.TuiTuiMsgCode;
 import suftware.tuitui.common.exception.TuiTuiException;
 import suftware.tuitui.common.http.HttpResponseDto;
 

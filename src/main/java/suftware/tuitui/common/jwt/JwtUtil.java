@@ -9,7 +9,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import suftware.tuitui.common.enumType.Role;
+import suftware.tuitui.common.enumtype.Role;
 import suftware.tuitui.common.time.DateTimeUtil;
 
 import javax.crypto.SecretKey;

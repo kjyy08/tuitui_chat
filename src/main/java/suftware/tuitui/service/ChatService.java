@@ -3,8 +3,7 @@ package suftware.tuitui.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import suftware.tuitui.dto.request.MessageRequestDto;
-
-import java.util.Optional;
+import suftware.tuitui.redis.RedisPublisher;
 
 @RequiredArgsConstructor
 @Service
@@ -13,6 +12,5 @@ public class ChatService {
 
     public void sendMessage(MessageRequestDto messageRequestDto){
         redisPublisher.publish(messageRequestDto);
-
     }
 }

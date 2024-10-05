@@ -10,7 +10,8 @@ import suftware.tuitui.common.enumtype.MessageType;
 @NoArgsConstructor
 public class MessageRequestDto {
     private MessageType messageType;
-    private String roomId;
+    private Integer roomId;
     private Integer senderProfileId;
+    private Integer receiverProfileId;
     private String content;
 }

@@ -5,7 +5,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 public class DateTimeUtil {
-    //  서울 시간대로 변환된 Timestamp 반환
+    //  서울 시간대로 변환된 현재 시간의 Timestamp 반환
     public static Timestamp getSeoulTimestamp(){
         ZonedDateTime seoulTime = ZonedDateTime.now(ZoneId.of("Asia/Seoul"));
         return Timestamp.valueOf(seoulTime.toLocalDateTime());

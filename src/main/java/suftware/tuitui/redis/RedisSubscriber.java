@@ -1,4 +1,4 @@
-package suftware.tuitui.service;
+package suftware.tuitui.redis;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,6 +15,7 @@ public class RedisSubscriber{
     private final ObjectMapper objectMapper;
     private final SimpMessageSendingOperations messageTemplate;
 
+    //  redis pub에서 발행된 메시지를 가져옴
     public void handleMessage(String message){
         try{
             log.info("Received message from Redis: {}", message);

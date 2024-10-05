@@ -1,4 +1,4 @@
-package suftware.tuitui.common.enumType;
+package suftware.tuitui.common.enumtype;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

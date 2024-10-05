@@ -1,7 +1,7 @@
 package suftware.tuitui.common.exception;
 
 import lombok.Getter;
-import suftware.tuitui.common.enumType.TuiTuiMsgCode;
+import suftware.tuitui.common.enumtype.TuiTuiMsgCode;
 
 @Getter
 public class TuiTuiException extends RuntimeException{
