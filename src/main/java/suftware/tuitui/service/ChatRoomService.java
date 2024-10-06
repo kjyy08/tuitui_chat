@@ -3,6 +3,7 @@ package suftware.tuitui.service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import suftware.tuitui.common.enumtype.TuiTuiMsgCode;
 import suftware.tuitui.common.exception.TuiTuiException;
 import suftware.tuitui.common.time.DateTimeUtil;
@@ -22,6 +23,7 @@ public class ChatRoomService {
     private final ProfileRepository profileRepository;
 
     //  채팅방 목록 전체 조회
+    @Transactional(readOnly = true)
     public List<ChatRoomResponseDto> readChatRoomByProfile(Integer profileId){
         List<ChatRoom> chatRoomList = chatRoomRepository.findByProfile(profileId);
 

@@ -21,7 +21,7 @@ public class ChatRoomController {
     private final ChatRoomService chatRoomService;
 
     @GetMapping("rooms/{profileId}")
-    public ResponseEntity<HttpResponseDto> readChatRoom(@RequestParam(name = "profileId") Integer profileId){
+    public ResponseEntity<HttpResponseDto> readChatRoom(@PathVariable(name = "profileId") Integer profileId){
         List<ChatRoomResponseDto> chatRoomResponseDtoList = chatRoomService.readChatRoomByProfile(profileId);
 
         return ResponseEntity.status(TuiTuiMsgCode.CHAT_ROOM_READ_SUCCESS.getHttpStatus()).body(HttpResponseDto.builder()
