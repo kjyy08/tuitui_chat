@@ -21,9 +21,13 @@ public class ChatRoomResponseDto {
 
     private String hostProfileNickname;
 
+    private String hostProfileImage;
+
     private Integer guestProfileId;
 
     private String guestProfileNickname;
+
+    private String guestProfileImage;
 
     private Timestamp createdAt;
 
@@ -35,8 +39,10 @@ public class ChatRoomResponseDto {
                 .chatRoomName(chatRoom.getChatRoomName())
                 .hostProfileId(chatRoom.getHostProfile().getProfileId())
                 .hostProfileNickname(chatRoom.getHostProfile().getNickname())
+                .hostProfileImage(chatRoom.getHostProfile().getProfileImage().getImgUrl())
                 .guestProfileId(chatRoom.getGuestProfile().getProfileId())
                 .guestProfileNickname(chatRoom.getGuestProfile().getNickname())
+                .guestProfileImage(chatRoom.getGuestProfile().getProfileImage().getImgUrl())
                 .createdAt(chatRoom.getCreatedAt())
                 .updateAt(chatRoom.getUpdateAt())
                 .build();
