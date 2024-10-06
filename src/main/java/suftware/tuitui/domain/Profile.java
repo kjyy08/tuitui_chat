@@ -49,10 +49,10 @@ public class Profile {
     @OneToOne(mappedBy = "profile", cascade = CascadeType.ALL, orphanRemoval = true)
     private ProfileImage profileImage;
 
-    @OneToOne(mappedBy = "hostProfile", cascade = CascadeType.ALL, orphanRemoval = true)
-    private ChatRoom hostChatRoom;
+    @OneToMany(mappedBy = "hostProfile", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ChatRoom> hostChatRoom;
 
-    @OneToOne(mappedBy = "guestProfile", cascade = CascadeType.ALL, orphanRemoval = true)
-    private ChatRoom guestChatRoom;
+    @OneToMany(mappedBy = "guestProfile", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ChatRoom> guestChatRoom;
 
 }

@@ -26,11 +26,11 @@ public class ChatRoom {
     @Column(name = "chat_room_name")
     private String chatRoomName;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "chat_room_host_id", referencedColumnName = "profile_id", nullable = false)
     private Profile hostProfile;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "chat_room_guest_id", referencedColumnName = "profile_id", nullable = false)
     private Profile guestProfile;
 
