@@ -55,4 +55,6 @@ public class Profile {
     @OneToMany(mappedBy = "guestProfile", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ChatRoom> guestChatRoom;
 
+    @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ChatContent> chatContent;
 }

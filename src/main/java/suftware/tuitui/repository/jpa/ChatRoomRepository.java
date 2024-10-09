@@ -13,8 +13,12 @@ import java.util.Optional;
 public interface ChatRoomRepository extends JpaRepository<ChatRoom, Integer> {
 
     //  주로 채팅방 조회에 사용
-    @Query("SELECT cr " +
+    @Query("SELECT DISTINCT cr " +
             "FROM ChatRoom cr " +
+            "JOIN FETCH cr.hostProfile hp " +
+            "JOIN FETCH cr.guestProfile gp " +
+            "JOIN FETCH hp.profileImage " +
+            "JOIN FETCH gp.profileImage "+
             "WHERE cr.hostProfile.profileId = :profileId " +
             "OR cr.guestProfile.profileId = :profileId")
     List<ChatRoom> findByProfile(@Param("profileId") Integer profileId);
@@ -25,7 +29,6 @@ public interface ChatRoomRepository extends JpaRepository<ChatRoom, Integer> {
             "WHERE (cr.hostProfile.profileId = :hostId AND cr.guestProfile.profileId = :guestId) " +
             "OR (cr.hostProfile.profileId = :guestId AND cr.guestProfile.profileId = :hostId)")
     Optional<ChatRoom> findByHostOrGuest(@Param("hostId") Integer hostId, @Param("guestId") Integer guestId);
-
 
     List<ChatRoom> findByHostProfile_profileId(Integer profileId);
     List<ChatRoom> findByGuestProfile_profileId(Integer profileId);

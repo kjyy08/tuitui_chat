@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @ToString
@@ -39,4 +40,7 @@ public class ChatRoom {
 
     @Column(name = "lastly")
     private Timestamp updateAt;
+
+    @OneToMany(mappedBy = "chatRoom", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ChatContent> chatContents;
 }

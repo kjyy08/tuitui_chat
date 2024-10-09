@@ -38,6 +38,7 @@ public enum TuiTuiMsgCode {
     COMMENT_LIKE_READ_SUCCESS(HttpStatus.OK, "COMMENT-005", "좋아요 조회 성공"),
 
     CHAT_ROOM_READ_SUCCESS(HttpStatus.OK, "CHATROOM-001", "채팅방 조회 성공"),
+    CHAT_CONTENT_READ_SUCCESS(HttpStatus.OK, "CHAT-001", "채팅 조회 성공"),
 
     // 201 Created responses
     USER_SIGNUP_SUCCESS(HttpStatus.CREATED, "USER-006", "회원가입 성공"),
@@ -91,6 +92,8 @@ public enum TuiTuiMsgCode {
 
     SNS_AUTH_BAD_REQUEST(HttpStatus.BAD_REQUEST, "SNS-001", "소셜 로그인 정보 불일치"),
 
+    CHAT_ROOM_FORBIDDEN(HttpStatus.FORBIDDEN, "CHATROOM-003", "채팅방에 없는 유저"),
+
     //  403 Forbidden responses
     IP_BANNED(HttpStatus.FORBIDDEN, "SERVER-002", "비정상적인 접근"),
 
@@ -114,6 +117,7 @@ public enum TuiTuiMsgCode {
     IMAGE_NOT_FOUND(HttpStatus.NOT_FOUND, "IMAGE-005", "이미지를 찾을 수 없음"),
 
     CHAT_ROOM_NOT_FOUND(HttpStatus.NOT_FOUND, "CHATROOM-003", "채팅방을 찾을 수 없음"),
+    CHAT_CONTENT_NOT_FOUND(HttpStatus.NOT_FOUND, "CHAT-002", "채팅을 찾을 수 없음"),
 
     //  500
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "SERVER-001", "서버에서 요청에 대한 처리를 할 수 없음");
