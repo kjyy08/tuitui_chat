@@ -17,8 +17,6 @@ public interface ChatRoomRepository extends JpaRepository<ChatRoom, Integer> {
             "FROM ChatRoom cr " +
             "JOIN FETCH cr.hostProfile hp " +
             "JOIN FETCH cr.guestProfile gp " +
-            "JOIN FETCH hp.profileImage " +
-            "JOIN FETCH gp.profileImage "+
             "WHERE cr.hostProfile.profileId = :profileId " +
             "OR cr.guestProfile.profileId = :profileId")
     List<ChatRoom> findByProfile(@Param("profileId") Integer profileId);

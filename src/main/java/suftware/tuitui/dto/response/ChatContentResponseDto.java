@@ -17,10 +17,8 @@ public class ChatContentResponseDto {
     private Integer chatContentId;
 
     private Integer senderProfileId;
-    private String nickname;
-    private String profileImage;
 
-    private String message;
+    private String content;
 
     private Timestamp createdAt;
 
@@ -28,9 +26,7 @@ public class ChatContentResponseDto {
         return ChatContentResponseDto.builder()
                 .chatContentId(chatContent.getChatContentId())
                 .senderProfileId(profile.getProfileId())
-                .nickname(profile.getNickname())
-                .profileImage(profile.getProfileImage().getImgUrl())
-                .message(chatContent.getMessage())
+                .content(chatContent.getMessage())
                 .createdAt(chatContent.getCreatedAt())
                 .build();
     }
