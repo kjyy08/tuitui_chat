@@ -10,8 +10,7 @@ import suftware.tuitui.domain.ChatContent;
 public interface ChatContentRepository extends JpaRepository<ChatContent, Integer> {
     @Query("SELECT cc " +
             "FROM ChatContent cc " +
-            "JOIN FETCH cc.sender p " +
-            "LEFT JOIN FETCH p.profileImage " +
+            "JOIN cc.sender p " +
             "WHERE cc.chatRoom.id = :roomId")
     Page<ChatContent> findByChatRoomWithProfiles(@Param("roomId") Integer roomId, Pageable pageable);
 
