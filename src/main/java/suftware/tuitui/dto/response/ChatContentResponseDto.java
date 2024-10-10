@@ -18,7 +18,7 @@ public class ChatContentResponseDto {
 
     private Integer senderProfileId;
 
-    private String content;
+    private String message;
 
     private Timestamp createdAt;
 
@@ -26,7 +26,7 @@ public class ChatContentResponseDto {
         return ChatContentResponseDto.builder()
                 .chatContentId(chatContent.getChatContentId())
                 .senderProfileId(profile.getProfileId())
-                .content(chatContent.getMessage())
+                .message(chatContent.getMessage())
                 .createdAt(chatContent.getCreatedAt())
                 .build();
     }
