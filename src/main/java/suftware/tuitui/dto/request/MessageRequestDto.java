@@ -14,7 +14,5 @@ public class MessageRequestDto {
     private Integer roomId;
     private Integer senderProfileId;
     private Integer receiverProfileId;
-
-    @NotEmpty
     private String content;
 }
