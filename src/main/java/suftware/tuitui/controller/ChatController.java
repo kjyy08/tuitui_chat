@@ -1,5 +1,6 @@
 package suftware.tuitui.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +39,7 @@ public class ChatController {
 
     //  메시지 발행
     @MessageMapping("/chat/message")
-    public void sendMessage(MessageRequestDto messageRequestDto){
+    public void sendMessage(@Valid MessageRequestDto messageRequestDto){
         log.info("ChatController.sendMessage() -> sender: {}, receiver: {}, message: {}",
                 messageRequestDto.getSenderProfileId(), messageRequestDto.getReceiverProfileId(),messageRequestDto.getContent());
         chatContentService.sendMessage(messageRequestDto);

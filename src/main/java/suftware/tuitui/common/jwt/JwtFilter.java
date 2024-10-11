@@ -67,9 +67,7 @@ public class JwtFilter extends OncePerRequestFilter {
             return;
         }
 
-        User user = new User();
-        user.setAccount(account);
-        user.setRole(Role.valueOf(role));
+        User user = User.of(account, Role.valueOf(role));
 
         CustomUserDetails customUserDetails = new CustomUserDetails(user);
         Authentication authToken = new UsernamePasswordAuthenticationToken(customUserDetails, null, customUserDetails.getAuthorities());

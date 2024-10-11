@@ -3,17 +3,16 @@ package suftware.tuitui.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.Fetch;
+import suftware.tuitui.common.time.DateTimeUtil;
 
 import java.sql.Timestamp;
 
 @Entity
 @ToString
 @Getter
-@Setter
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
+@Builder(access = AccessLevel.PRIVATE)
 @DynamicUpdate
 @Table(name = "chat_content")
 public class ChatContent {
@@ -35,4 +34,13 @@ public class ChatContent {
 
     @Column(name = "message")
     private String message;
+
+    public static ChatContent of(ChatRoom chatRoom, Profile sender, String message){
+        return ChatContent.builder()
+                .chatRoom(chatRoom)
+                .sender(sender)
+                .createdAt(DateTimeUtil.getSeoulTimestamp())
+                .message(message)
+                .build();
+    }
 }

@@ -11,10 +11,9 @@ import java.sql.Timestamp;
 @Entity
 @ToString
 @Getter
-@Setter
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@Builder(access = AccessLevel.PRIVATE)
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @DynamicUpdate
 @Table(name = "user")
 public class User {
@@ -45,4 +44,11 @@ public class User {
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Profile profile;
+
+    public static User of(String account, Role role) {
+        return User.builder()
+                .account(account)
+                .role(role)
+                .build();
+    }
 }

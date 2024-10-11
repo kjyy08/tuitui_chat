@@ -16,7 +16,7 @@ public class RedisPublisher {
     private final RedisTemplate<String, Object> redisTemplate;
 
     public void publish(MessageRequestDto messageRequestDto){
-        log.info("sender: {}, message: {}", messageRequestDto.getSenderProfileId(), messageRequestDto.getContent());
+        log.info("RedisPublisher.publish() -> sender: {}, message: {}", messageRequestDto.getSenderProfileId(), messageRequestDto.getContent());
         redisTemplate.convertAndSend(channelTopic.getTopic(), messageRequestDto);
     }
 }

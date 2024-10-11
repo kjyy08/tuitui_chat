@@ -42,14 +42,10 @@ public class ChatRoomService {
         Optional<ChatRoom> chatRoom  = chatRoomRepository.findByHostOrGuest(hostId, guestId);
         //  없으면 새로운 채팅방 생성
         if (chatRoom.isEmpty()){
-            chatRoom = Optional.of(chatRoomRepository.save(ChatRoom.builder()
-                    .hostProfile(profileRepository.findById(hostId)
-                            .orElseThrow(() -> new TuiTuiException(TuiTuiMsgCode.PROFILE_NOT_FOUND)))
-                    .guestProfile(profileRepository.findById(guestId)
-                            .orElseThrow(() -> new TuiTuiException(TuiTuiMsgCode.PROFILE_NOT_FOUND)))
-                    .createdAt(DateTimeUtil.getSeoulTimestamp())
-                    .updateAt(DateTimeUtil.getSeoulTimestamp())
-                    .build()));
+            chatRoom = Optional.of(chatRoomRepository.save(ChatRoom.of(
+                    profileRepository.findById(hostId).orElseThrow(() -> new TuiTuiException(TuiTuiMsgCode.PROFILE_NOT_FOUND)),
+                    profileRepository.findById(guestId).orElseThrow(() -> new TuiTuiException(TuiTuiMsgCode.PROFILE_NOT_FOUND))))
+            );
         }
 
         return Optional.of(ChatRoomResponseDto.toDto(chatRoom.get()));
