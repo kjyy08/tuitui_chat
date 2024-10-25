@@ -1,4 +1,4 @@
-package suftware.tuitui.config;
+package suftware.tuitui.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

@@ -1,4 +1,4 @@
-package suftware.tuitui.redis;
+package suftware.tuitui.common.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +12,7 @@ import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import suftware.tuitui.redis.RedisSubscriber;
 
 @Configuration
 @EnableRedisRepositories(
