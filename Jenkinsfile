@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-        SCRIPT_PATH = '/var/jenkins_home/custom/tuitui_chat'
+        SCRIPT_PATH = '/var/jenkins_home/custom/tuitui_backend_chat'
     }
     tools {
         gradle 'gradle 8.7'
