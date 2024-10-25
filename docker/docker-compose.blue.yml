@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  tuitui-chat-blue:
+    # 현재 디렉토리에서의 Dockerfile을 사용하여 Docker 이미지를 빌드
+    build: .
+    ports:
+      - "8445:8443"
+    # 컨테이너의 이름
+    container_name: tuitui-chat-blue
+    environment:
+      - TZ=Asia/Seoul
+    env_file:
+      - .env
+    networks:
+      - tuitui-network
+
+networks:
+  tuitui-network:
+    external: true
+    driver: bridge

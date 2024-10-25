@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import suftware.tuitui.common.enumtype.TuiTuiMsgCode;
 import suftware.tuitui.common.exception.TuiTuiException;
-import suftware.tuitui.common.time.DateTimeUtil;
 import suftware.tuitui.domain.ChatRoom;
 import suftware.tuitui.dto.response.ChatRoomResponseDto;
 import suftware.tuitui.repository.jpa.ChatRoomRepository;
