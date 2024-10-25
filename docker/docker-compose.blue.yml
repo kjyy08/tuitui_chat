@@ -5,6 +5,8 @@ services:
     build: .
     ports:
       - "8445:8443"
+    # 이미지 이름
+    image: tuitui-chat-blue
     # 컨테이너의 이름
     container_name: tuitui-chat-blue
     environment:
