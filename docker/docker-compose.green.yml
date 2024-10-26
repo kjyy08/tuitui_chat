@@ -18,4 +18,5 @@ services:
 
 networks:
   tuitui-chat-network:
+    external: true
     driver: bridge
