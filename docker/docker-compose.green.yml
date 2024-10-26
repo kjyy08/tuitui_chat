@@ -14,9 +14,8 @@ services:
     env_file:
       - .env
     networks:
-      - tuitui-network
+      - tuitui-chat-network
 
 networks:
-  tuitui-network:
-    external: true
+  tuitui-chat-network:
     driver: bridge
