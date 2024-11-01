@@ -4,7 +4,7 @@ services:
     # 현재 디렉토리에서의 Dockerfile을 사용하여 Docker 이미지를 빌드
     build: .
     ports:
-      - "8445:8443"
+      - "8443:8443"
     # 이미지 이름
     image: tuitui-chat-blue
     # 컨테이너의 이름

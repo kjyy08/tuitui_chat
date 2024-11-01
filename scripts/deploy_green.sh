@@ -18,7 +18,7 @@ deploy_green() {
     log "green 배포 시작 : $(date +'%Y-%m-%d %H:%M:%S')"
     docker-compose -p "${DOCKER_APP_NAME}-green" -f docker-compose.green.yml up -d --build
 
-    if check_health 8446; then
+    if check_health 8444; then
         log "blue 중단 시작 : $(date +'%Y-%m-%d %H:%M:%S')"
         docker-compose -p "${DOCKER_APP_NAME}-blue" -f docker-compose.blue.yml down
     else
