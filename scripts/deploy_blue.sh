@@ -16,7 +16,7 @@ source ./health_check.sh  # 헬스 체크 함수 로드
 # 블루 환경 배포
 deploy_blue() {
     log "blue 배포 시작 : $(date +'%Y-%m-%d %H:%M:%S')"
-    docker-compose -p "${DOCKER_APP_NAME}-green" -f docker-compose.blue.yml up -d --build
+    docker-compose -p "${DOCKER_APP_NAME}-green" -f docker-compose.green.yml up -d --build
 
     #if check_health 8443; then
     #    log "green 중단 시작 : $(date +'%Y-%m-%d %H:%M:%S')"
